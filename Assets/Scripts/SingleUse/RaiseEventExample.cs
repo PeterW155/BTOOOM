@@ -41,10 +41,10 @@ public class RaiseEventExample : MonoBehaviourPun
 
     private void Update()
     {
-        if (base.photonView.IsMine && Input.GetKeyDown(KeyCode.Space))
+        /*if (base.photonView.IsMine && Input.GetKeyDown(KeyCode.Space))
         {
             ChangeColor();
-        }
+        }*/
     }
 
     private void ChangeColor()
@@ -54,7 +54,6 @@ public class RaiseEventExample : MonoBehaviourPun
         float b = Random.Range(0f, 1f);
 
         _spriteRenderer.color = new Color(r, g, b, 1f);
-
 
         object[] datas = new object[] { r, g, b };
 

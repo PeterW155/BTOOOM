@@ -10,7 +10,9 @@ public class SimpleObjectMover : MonoBehaviourPun, IPunObservable
     [SerializeField]
     private float _moveSpeed = 1f;
 
-    private Animator _animator;
+    private CharacterController characterController;
+
+    //private Animator _animator;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -28,7 +30,19 @@ public class SimpleObjectMover : MonoBehaviourPun, IPunObservable
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        //_animator = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
+
+        if (base.photonView.IsMine)
+        {
+            foreach (Transform child in this.transform)
+            {
+                child.gameObject.SetActive(true);
+            }
+            //GetComponent<CharacterController>().enabled = true;
+
+        }
+
     }
 
     private void Update()
@@ -37,14 +51,15 @@ public class SimpleObjectMover : MonoBehaviourPun, IPunObservable
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
-            transform.position += (new Vector3(x, y, 0f)) * _moveSpeed;
+            //transform.position += (new Vector3(x, 0.0f, y)) * _moveSpeed;
+            characterController.SimpleMove(new Vector3(x * _moveSpeed, 0.0f, y * _moveSpeed));
 
-            UpdateMovingBoolean((x != 0f || y != 0f));
+            //UpdateMovingBoolean((x != 0f || y != 0f));
         }
     }
 
-    private void UpdateMovingBoolean(bool moving)
+    /*private void UpdateMovingBoolean(bool moving)
     {
-        _animator.SetBool("Moving", moving);
-    }
+        //_animator.SetBool("Moving", moving);
+    }*/
 }

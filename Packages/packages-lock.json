@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.unity.cinemachine": {
+      "version": "2.7.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "1.15.15",
       "depth": 0,
@@ -14,21 +21,6 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.feature.development": {
-      "version": "1.0.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ide.visualstudio": "default",
-        "com.unity.ide.rider": "default",
-        "com.unity.ide.vscode": "default",
-        "com.unity.editorcoroutines": "default",
-        "com.unity.performance.profile-analyzer": "default",
-        "com.unity.test-framework": "default",
-        "com.unity.testtools.codecoverage": "default"
-      },
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
