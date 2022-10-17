@@ -9,8 +9,13 @@ public class SimpleObjectMover : MonoBehaviourPun, IPunObservable
 
     [SerializeField]
     private float _moveSpeed = 1f;
+    [SerializeField]
+    private float _cameraSpeed = 1f;
+
+    public Camera camera;
 
     private CharacterController characterController;
+    //private Rigidbody rigidbody;
 
     //private Animator _animator;
 
@@ -32,6 +37,7 @@ public class SimpleObjectMover : MonoBehaviourPun, IPunObservable
     {
         //_animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
+        //rigidbody = GetComponent<Rigidbody>();
 
         if (base.photonView.IsMine)
         {
@@ -51,8 +57,15 @@ public class SimpleObjectMover : MonoBehaviourPun, IPunObservable
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
-            //transform.position += (new Vector3(x, 0.0f, y)) * _moveSpeed;
+            transform.position += (new Vector3(x, 0.0f, y)) * _moveSpeed;
             characterController.SimpleMove(new Vector3(x * _moveSpeed, 0.0f, y * _moveSpeed));
+
+            float mouseX = (Input.mousePosition.x / Screen.width) - 0.5f;
+            float mouseY = (Input.mousePosition.y / Screen.height) - 0.5f;
+
+            
+            this.gameObject.transform.localRotation = Quaternion.Euler(new Vector4(transform.localRotation.x, mouseX * 360f, transform.localRotation.z));
+            camera.transform.localRotation = Quaternion.Euler(new Vector4(-1f * (mouseY * 180f), transform.localRotation.y, transform.localRotation.z));
 
             //UpdateMovingBoolean((x != 0f || y != 0f));
         }
