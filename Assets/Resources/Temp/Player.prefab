@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6429232861077036888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4921852804872607204}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4921852804872607204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6429232861077036888}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8329901595098404461}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8329901593930218718
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8329901595098404461}
   - component: {fileID: 8329901595098404460}
+  - component: {fileID: 9117708935205934512}
   m_Layer: 0
   m_Name: Orientation
   m_TagString: Untagged
@@ -231,7 +262,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4921852804872607204}
   m_Father: {fileID: 8329901593930218712}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,6 +282,24 @@ MonoBehaviour:
   moveSpeed: 1
   orientation: {fileID: 8329901595098404461}
   rb: {fileID: 8329901593930218713}
+--- !u!114 &9117708935205934512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329901595098404498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789843d651f9ab34f84a06b52223c234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  holdingBomb: 1
+  hand: {fileID: 4921852804872607204}
+  currentBomb: {fileID: 0}
+  bombType: {fileID: 5315075894807126545, guid: 225646f02833aef49b86a023c12a8708, type: 3}
+  bombs: []
 --- !u!1 &8329901595101215428
 GameObject:
   m_ObjectHideFlags: 0
