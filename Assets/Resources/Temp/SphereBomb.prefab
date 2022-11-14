@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 5315075894807126546}
   - component: {fileID: 5315075894807126547}
   - component: {fileID: 5315075894807126544}
-  - component: {fileID: 5315075894807126572}
   - component: {fileID: 8403037544758887857}
   - component: {fileID: 7974327833638801698}
   - component: {fileID: 2866052831956167599}
   - component: {fileID: 5183852437449998033}
+  - component: {fileID: 7176416307627217871}
+  - component: {fileID: 5499930307959096184}
   m_Layer: 0
   m_Name: SphereBomb
   m_TagString: Untagged
@@ -105,22 +106,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!111 &5315075894807126572
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5315075894807126545}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 0c96b5dd5952ff244ba37a31c65d698a, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 0c96b5dd5952ff244ba37a31c65d698a, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &8403037544758887857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +155,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5183852437449998033}
+  - {fileID: 5499930307959096184}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -189,6 +175,46 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!95 &7176416307627217871
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315075894807126545}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27c3d413e99b05a4797ce5883924d188, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5499930307959096184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315075894807126545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 1
+    Name: Trigger
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &5315075895113241580
 GameObject:
   m_ObjectHideFlags: 0

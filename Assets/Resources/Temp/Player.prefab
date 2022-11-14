@@ -299,7 +299,10 @@ MonoBehaviour:
   hand: {fileID: 4921852804872607204}
   currentBomb: {fileID: 0}
   bombType: {fileID: 5315075894807126545, guid: 225646f02833aef49b86a023c12a8708, type: 3}
-  bombs: []
+  bombNumber: 0
+  bomb1: {fileID: 5315075894807126545, guid: 225646f02833aef49b86a023c12a8708, type: 3}
+  bomb2: {fileID: 1460923089224763507, guid: 5967277237652db4387864ea4d839fbd, type: 3}
+  bomb3: {fileID: 6419687331604196185, guid: d56af044960815f43a1f59e30bce94e4, type: 3}
 --- !u!1 &8329901595101215428
 GameObject:
   m_ObjectHideFlags: 0

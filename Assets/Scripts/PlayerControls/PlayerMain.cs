@@ -12,13 +12,17 @@ public class PlayerMain : MonoBehaviour
     public GameObject currentBomb;
     public GameObject bombType;
 
-    public GameObject[] bombs;
+    public int bombNumber;
+    public GameObject bomb1;
+    public GameObject bomb2;
+    public GameObject bomb3;
 
     // Start is called before the first frame update
     void Start()
     {
         health = 100;
         currentBomb = MainManager.NetworkInstantiate(bombType, hand.transform.position, Quaternion.identity);
+
     }
 
     // Update is called once per frame
@@ -31,12 +35,20 @@ public class PlayerMain : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            currentBomb.GetComponent<Animation>().Play();
+            currentBomb.GetComponent<Animator>().SetBool("Trigger", true);
         }
         if (Input.GetMouseButtonUp(0))
         {
             ThrowBomb();
             Invoke("SetBomb", 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RotateBomb(1);
+        } else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            RotateBomb(-1);
         }
 
         
@@ -63,6 +75,30 @@ public class PlayerMain : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("This player lost");
+        }
+    }
+
+    public void RotateBomb(int direction)
+    {
+        Destroy(currentBomb.gameObject);
+        bombNumber += direction;
+        if (bombNumber > 2) bombNumber = 0;
+        if (bombNumber < 0) bombNumber = 2;
+        if (bombNumber == 0)
+        {
+            currentBomb = MainManager.NetworkInstantiate(bomb1, hand.transform.position, Quaternion.identity);
+            bombType = bomb1;
+
+        }
+        if (bombNumber == 1)
+        {
+            currentBomb = MainManager.NetworkInstantiate(bomb2, hand.transform.position, Quaternion.identity);
+            bombType = bomb2;
+        }
+        if (bombNumber == 2)
+        {
+            currentBomb = MainManager.NetworkInstantiate(bomb3, hand.transform.position, Quaternion.identity);
+            bombType = bomb3;
         }
     }
 }
