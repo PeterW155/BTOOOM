@@ -165,12 +165,14 @@ public class PlayerMain : MonoBehaviour
         object[] nothing = new object[] { 1, 2, 3, };
         PhotonNetwork.RaiseEvent(LOSE_EVENT, nothing, RaiseEventOptions.Default, SendOptions.SendReliable);
         loseScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void PlayerWins()
     {
         Debug.Log("You won");
         winScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     private void OnEnable()
