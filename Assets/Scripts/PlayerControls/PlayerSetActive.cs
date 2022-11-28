@@ -21,6 +21,11 @@ public class PlayerSetActive : MonoBehaviourPun, IPunObservable
         {
             camera.SetActive(true);
             orientation.SetActive(true);
+            this.gameObject.tag = "Player";
+            /*foreach(Transform t in this.transform)
+            {
+                t.tag = "Player";
+            }*/
             /*foreach (Transform child in this.transform)
             {
                 child.gameObject.SetActive(true);

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class BombsMain : MonoBehaviour
 {
-    protected abstract void trigger();
+    public abstract void trigger();
 }

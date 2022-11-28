@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereBomb : MonoBehaviour
+public class SphereBomb : BombsMain
 {
 
     public bool badaBoom;
@@ -18,7 +18,7 @@ public class SphereBomb : MonoBehaviour
 
     public void Explode()
     {
-        Debug.Log("Boom");
+        //Debug.Log("Boom");
         badaBoom = false;
         Invoke("GoAway", 1);
     }
@@ -28,4 +28,8 @@ public class SphereBomb : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public override void trigger()
+    {
+        GetComponent<Animator>().SetBool("Trigger", true);
+    }
 }

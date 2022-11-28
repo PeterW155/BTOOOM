@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4921852804872607204}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 1385841213585731020}
   - component: {fileID: 1049193929870890123}
   - component: {fileID: 5402350806231381041}
-  m_Layer: 0
+  - component: {fileID: 8866479746228608816}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,6 +138,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 8329901595101215428}
   orientation: {fileID: 8329901595098404498}
+--- !u!136 &8866479746228608816
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329901593930218718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8329901594194628930
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +164,7 @@ GameObject:
   - component: {fileID: 8329901594194628958}
   - component: {fileID: 8329901594194628959}
   - component: {fileID: 8329901594194628956}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +260,7 @@ GameObject:
   - component: {fileID: 8329901595098404461}
   - component: {fileID: 8329901595098404460}
   - component: {fileID: 9117708935205934512}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,12 +312,17 @@ MonoBehaviour:
   health: 0
   holdingBomb: 1
   hand: {fileID: 4921852804872607204}
+  healthShow: {fileID: 0}
   currentBomb: {fileID: 0}
   bombType: {fileID: 5315075894807126545, guid: 225646f02833aef49b86a023c12a8708, type: 3}
   bombNumber: 0
   bomb1: {fileID: 5315075894807126545, guid: 225646f02833aef49b86a023c12a8708, type: 3}
   bomb2: {fileID: 1460923089224763507, guid: 5967277237652db4387864ea4d839fbd, type: 3}
   bomb3: {fileID: 6419687331604196185, guid: d56af044960815f43a1f59e30bce94e4, type: 3}
+  triggerBombs: []
+  triggerBombNumber: 0
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
 --- !u!1 &8329901595101215428
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +335,7 @@ GameObject:
   - component: {fileID: 8329901595101215424}
   - component: {fileID: 8329901595101215425}
   - component: {fileID: 8329901595101215430}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
