@@ -75,7 +75,7 @@ public class PlayerMain : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             RotateBomb(1);
-            TakeDamage(5);
+            //TakeDamage(5);
         } else if (Input.GetKeyDown(KeyCode.Q))
         {
             RotateBomb(-1);
