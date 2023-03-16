@@ -10,6 +10,9 @@ public class RandomCustomPropertyGenerator : MonoBehaviour
     [SerializeField]
     private TMP_Text _text;
 
+    public int[] playerDecks;
+    public CallFrontEnd callFrontEnd;
+
     private ExitGames.Client.Photon.Hashtable _myCustomProperties = new ExitGames.Client.Photon.Hashtable();
 
     private void SetCustomNumber()
@@ -26,6 +29,16 @@ public class RandomCustomPropertyGenerator : MonoBehaviour
         //Going to use custom properties to hold information like player health
     }
 
+    public void SetName(string name)
+    {
+        PhotonNetwork.NickName = name;
+    }
+
+    public void GetDecks(int[] decks)
+    {
+        playerDecks = decks;
+    }
+
     private void SetPlayerName()
     {
         PhotonNetwork.NickName = _text.text;
@@ -33,7 +46,8 @@ public class RandomCustomPropertyGenerator : MonoBehaviour
 
     public void OnClick_Button()
     {
-        SetPlayerName();
+        callFrontEnd.SomeMethod();
+        //SetPlayerName();
         //SetCustomNumber();
     }
 }
