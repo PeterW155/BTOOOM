@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SetPlayerDeck : MonoBehaviour
 {
-    public List<Deck> playerDecks;
+    
     public ListDecks listDecks;
-    public List<int> ids;
+    public List<string> deckNames;
+    public List<string[]> decks;
 
     // Start is called before the first frame update
     void Start()
@@ -20,24 +21,22 @@ public class SetPlayerDeck : MonoBehaviour
         
     }
 
-    public void GetDecks(Deck[] decks)
+    public void GetDecks(string[] deckID, string[] deckName, string[][] cards)
     {
-        for (int i = 0; i < decks.Length; i++)
+        for (int i = 0; i < deckID.Length; i++)
         {
-            playerDecks.Add(decks[i]);
+            deckNames.Add(deckName[i]);
+            decks.Add(cards[i]);
         }
         
         Debug.Log("Unity has the decks");
-        Debug.Log(playerDecks);
+        Debug.Log(deckNames);
 
-        foreach (Deck deck in playerDecks)
-        {
-            ids.Add(int.Parse(deck.id));
-        }
-        listDecks.SetDeckIds(ids);
+        
+        listDecks.SetDeckIds(deckNames);
     }
 
-    public void DemoDecks(List<int> idsDemo)
+    public void DemoDecks(List<string> idsDemo)
     {
         /*playerDecks = decks;
         Debug.Log("Unity has the decks");
@@ -50,8 +49,8 @@ public class SetPlayerDeck : MonoBehaviour
         listDecks.SetDeckIds(idsDemo);
     }
 
-    public Deck GetDeck(int place)
+    public string[] GetDeck(int place)
     {
-        return playerDecks[place];
+        return decks[place];
     }
 }

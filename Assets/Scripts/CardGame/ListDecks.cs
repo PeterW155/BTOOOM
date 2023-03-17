@@ -7,7 +7,7 @@ using Photon.Pun;
 
 public class ListDecks : MonoBehaviour
 {
-    public List<int> deckIds;
+    public List<string> deckIds;
     public TMP_Dropdown dropdown;
     public List<TMP_Dropdown.OptionData> someList;
     public SetPlayerDeck setPlayerDeck;
@@ -27,7 +27,7 @@ public class ListDecks : MonoBehaviour
         
     }
 
-    public void SetDeckIds(List<int> ids)
+    public void SetDeckIds(List<string> ids)
     {
         Debug.Log("The decks are getting listed");
         deckIds = ids;
@@ -36,7 +36,7 @@ public class ListDecks : MonoBehaviour
         for (int i = 0; i < ids.Count; i++)
         {
             TMP_Dropdown.OptionData newData = new TMP_Dropdown.OptionData();
-            newData.text = ids[i].ToString();
+            newData.text = ids[i];
             someList.Add(newData);
         }
 
@@ -48,7 +48,7 @@ public class ListDecks : MonoBehaviour
     {
         int place = dropdown.value;
         Debug.Log(place);
-        Deck playerDeck = setPlayerDeck.GetDeck(place);
+        string[] playerDeck = setPlayerDeck.GetDeck(place);
         _myCustomProperties["PlayerDeck"] = playerDeck;
         //PhotonNetwork.LocalPlayer.CustomProperties = _myCustomProperties;
         PhotonNetwork.SetPlayerCustomProperties(_myCustomProperties);

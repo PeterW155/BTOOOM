@@ -6,16 +6,16 @@ public class DemoDecks : MonoBehaviour
 {
     public List<Deck> demoDecks;
     public SetPlayerDeck setPlayerDeck;
-    public List<int> demoIds;
+    public List<string> demoIds;
 
     // Start is called before the first frame update
     void Start()
     {
-        demoIds.Add(1);
-        demoIds.Add(2);
-        demoIds.Add(3);
-        demoIds.Add(4);
-        demoIds.Add(5);
+        demoIds.Add("One");
+        demoIds.Add("Two");
+        demoIds.Add("Three");
+        demoIds.Add("Four");
+        demoIds.Add("Five");
         print(demoIds);
         //demoDecks = new Deck[1];
 
