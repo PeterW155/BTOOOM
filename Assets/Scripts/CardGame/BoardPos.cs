@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class BoardPos : MonoBehaviour
 {
@@ -87,29 +88,55 @@ public class BoardPos : MonoBehaviour
         //int place = playerManager.activeHand.GetComponentInChildren<Card>().id;
         //Debug.Log("The card id is " + place);
 
-        GameObject hold;
+        //GameObject hold;
 
         if(playerManager.CanGo() && playerManager.activeHand != null && !hasCard)
         {
+            int playerHold;
             int place = playerManager.activeHand.GetComponentInChildren<Card>().id;
             Debug.Log("The card id is " + place);
             if (playerManager.playerNumber == 1)
             {
-                hold = allCards.GetCard1(place);
+                playerHold = 1;
             }
             else
             {
-                hold = allCards.GetCard2(place);
+                playerHold = 2;
             }
 
-            card = MainManager.NetworkInstantiate(hold, this.transform.position, Quaternion.identity);
-            card.transform.parent = this.transform;
-            currCard = card.GetComponent<Card>();
+            //card = MainManager.NetworkInstantiate(hold, this.transform.position, Quaternion.identity);
+            //card = Instantiate(hold, this.transform.position, Quaternion.identity);
+            //card.transform.parent = this.transform;
+            //currCard = card.GetComponent<Card>();
 
-            hasCard = true;
-            playerControl = playerManager.playerNumber;
+            //hasCard = true;
+            //playerControl = playerManager.playerNumber;
+
+            PhotonView photonView = PhotonView.Get(this);
+            photonView.RPC("SpawnCard", RpcTarget.All, place, playerHold);
 
             playerManager.TurnTaken();
         }
+    }
+
+    [PunRPC]
+    public void SpawnCard(int id, int player)
+    {
+        GameObject hold;
+        if (playerManager.playerNumber == 1)
+        {
+            hold = allCards.GetCard1(id);
+        }
+        else
+        {
+            hold = allCards.GetCard2(id);
+        }
+
+        card = Instantiate(hold, this.transform.position, Quaternion.identity);
+        //card.transform.parent = this.transform;
+        currCard = card.GetComponent<Card>();
+
+        hasCard = true;
+        playerControl = playerManager.playerNumber;
     }
 }
