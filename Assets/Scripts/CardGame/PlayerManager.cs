@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public int playerNumber;
     public TurnManager turnManager;
     public GameObject turnManagerObject;
+    public GameObject TurnManageInScene;
 
     public GameObject activeHand;
 
@@ -20,12 +21,14 @@ public class PlayerManager : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
         {
             playerNumber = 1;
-            GameObject hold = MainManager.NetworkInstantiate(turnManagerObject, this.transform.position, Quaternion.identity);
-            turnManager = hold.GetComponent<TurnManager>();
+            //GameObject hold = MainManager.NetworkInstantiate(turnManagerObject, this.transform.position, Quaternion.identity);
+            //turnManager = hold.GetComponent<TurnManager>();
+            turnManager = TurnManageInScene.GetComponent<TurnManager>();
         }
         else
         {
-            turnManager = FindObjectOfType<TurnManager>();
+            //turnManager = FindObjectOfType<TurnManager>();
+            turnManager = TurnManageInScene.GetComponent<TurnManager>();
             playerNumber = 2;
         }
         Debug.Log("You are player " + playerNumber);
