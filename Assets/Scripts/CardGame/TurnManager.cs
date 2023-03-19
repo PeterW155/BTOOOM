@@ -11,6 +11,7 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         turn = 1;
+        Debug.Log("The turn manager is ALIVE");
     }
 
     // Update is called once per frame
