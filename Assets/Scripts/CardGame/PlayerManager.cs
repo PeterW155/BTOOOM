@@ -29,6 +29,7 @@ public class PlayerManager : MonoBehaviour
             playerNumber = 2;
         }
         Debug.Log("You are player " + playerNumber);
+        Debug.Log("We start on turn: " + turnManager.turn);
     }
 
     // Update is called once per frame

@@ -38,7 +38,7 @@ public class HandPos : MonoBehaviour
 
     public void CardPlayed()
     {
-        card.GetComponent<Card>().KillIt();
+        //card.GetComponent<Card>().KillIt();
         card = playerDeck.DrawCard();
         Instantiate(card, this.transform);
     }

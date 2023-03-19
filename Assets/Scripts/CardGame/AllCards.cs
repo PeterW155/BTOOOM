@@ -6,6 +6,8 @@ public class AllCards : MonoBehaviour
 {
     public GameObject[] cards;
     public GameObject[] enemyCards;
+    public GameObject[] localCards;
+    public GameObject[] localEnemyCards;
     public List<GameObject> GetCards(int[] Cards)
     {
         List<GameObject> hold = new List<GameObject>();

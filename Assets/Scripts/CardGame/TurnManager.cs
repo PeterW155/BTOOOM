@@ -26,6 +26,7 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn()
     {
+        Debug.Log("The next turn function has happened");
         if (turn == 1)
         {
             turn = 2;
