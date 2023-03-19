@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class TurnManager : MonoBehaviour
+public class TurnManager : MonoBehaviour, IPunObservable
 {
 
     public int turn;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+    }
 
     // Start is called before the first frame update
     void Start()

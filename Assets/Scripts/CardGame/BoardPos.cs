@@ -103,6 +103,7 @@ public class BoardPos : MonoBehaviour
             }
 
             card = MainManager.NetworkInstantiate(hold, this.transform.position, Quaternion.identity);
+            card.transform.parent = this.transform;
             currCard = card.GetComponent<Card>();
 
             hasCard = true;

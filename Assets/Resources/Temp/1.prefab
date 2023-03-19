@@ -229,6 +229,7 @@ MonoBehaviour:
   health: 68
   attack: 32
   boardPos: {fileID: 0}
+  id: 0
 --- !u!114 &-6648607664280966889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +248,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
