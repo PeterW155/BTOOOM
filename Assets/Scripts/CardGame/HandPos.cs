@@ -26,6 +26,7 @@ public class HandPos : MonoBehaviour
         Debug.Log("Clicked a card in hand");
         if (playerManager.CanGo())
         {
+            Debug.Log("The player was allowed to grab");
             playerManager.SetActivehand(this.gameObject);
         }
     }

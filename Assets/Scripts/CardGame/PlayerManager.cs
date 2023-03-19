@@ -40,6 +40,8 @@ public class PlayerManager : MonoBehaviour
 
     public bool CanGo()
     {
+        Debug.Log("The player that just tried is player: " + playerNumber);
+        Debug.Log("And the Turn number is: " + turnManager.turn);
         if(turnManager.GetTurn() == playerNumber)
         {
             return true;

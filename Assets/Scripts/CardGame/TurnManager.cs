@@ -49,5 +49,6 @@ public class TurnManager : MonoBehaviour, IPunObservable
         {
             turn = 1;
         }
+        Debug.Log("The current turn is: " + turn);
     }
 }
