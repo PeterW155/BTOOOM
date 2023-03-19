@@ -9,6 +9,8 @@ public class BoardPos : MonoBehaviour
     public Card currCard;
     public bool hasCard;
     public int playerControl;
+    public PlayerManager playerManager;
+    public AllCards allCards;
 
     public BoardPos up;
     public BoardPos down;
@@ -76,6 +78,37 @@ public class BoardPos : MonoBehaviour
         if (right != null && right.hasCard)
         {
             right.HitCard(damage);
+        }
+    }
+
+    public void OnClick_ThisBoardPos()
+    {
+        Debug.Log("You clicked one of the board positions");
+        //int place = playerManager.activeHand.GetComponentInChildren<Card>().id;
+        //Debug.Log("The card id is " + place);
+
+        GameObject hold;
+
+        if(playerManager.CanGo() && playerManager.activeHand != null && !hasCard)
+        {
+            int place = playerManager.activeHand.GetComponentInChildren<Card>().id;
+            Debug.Log("The card id is " + place);
+            if (playerManager.playerNumber == 1)
+            {
+                hold = allCards.GetCard1(place);
+            }
+            else
+            {
+                hold = allCards.GetCard2(place);
+            }
+
+            card = MainManager.NetworkInstantiate(hold, this.transform.position, Quaternion.identity);
+            currCard = card.GetComponent<Card>();
+
+            hasCard = true;
+            playerControl = playerManager.playerNumber;
+
+            playerManager.TurnTaken();
         }
     }
 }

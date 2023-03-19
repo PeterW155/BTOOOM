@@ -47,10 +47,22 @@ public class SetPlayerDeck : MonoBehaviour
             ids.Add(int.Parse(deck.id));
         }*/
         listDecks.SetDeckIds(idsDemo);
+        listDecks.SetDemoState(true);
     }
 
     public string[] GetDeck(int place)
     {
         return decks[place];
+    }
+
+    public string[] GetDemoDeck(int place)
+    {
+        string[] hold1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+        string[] hold2 = { "2", "2", "2", "2", "2", "2", "2", "2", "2", "2" };
+        string[] hold3 = { "3", "3", "3", "3", "3", "3", "3", "3", "3", "3" };
+        string[] hold4 = { "4", "4", "4", "4", "4", "4", "4", "4", "4", "4" };
+        string[] hold5 = { "5", "5", "5", "5", "5", "5", "5", "5", "5", "5" };
+        string[][] holdall = { hold1, hold2, hold3, hold4, hold5 };
+        return holdall[place];
     }
 }

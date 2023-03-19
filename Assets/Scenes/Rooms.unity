@@ -696,6 +696,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92118683}
   m_CullTransparentMesh: 1
+--- !u!1 &148888730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 148888732}
+  - component: {fileID: 148888731}
+  m_Layer: 0
+  m_Name: DeckHoldTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &148888731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148888730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553066c3e440cfd46a16ba26a92cc2b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckTest: []
+--- !u!4 &148888732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148888730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 386.63354, y: 182.49168, z: 241.49263}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259514424
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,10 +794,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1854b87655f317c4cab652e4e918c5ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckIds: 
+  deckIds: []
   dropdown: {fileID: 259514427}
   someList: []
   setPlayerDeck: {fileID: 1655709723}
+  please: {fileID: 148888731}
+  demoState: 0
 --- !u!114 &259514427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1886,7 +1932,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 510974976}
   m_HandleRect: {fileID: 510974975}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5462,7 +5508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setPlayerDeck: {fileID: 1655709723}
-  demoIds: 
+  demoIds: []
 --- !u!114 &1596464461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5616,7 +5662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listDecks: {fileID: 259514426}
-  ids: 
+  deckNames: []
 --- !u!1 &1688975594
 GameObject:
   m_ObjectHideFlags: 0

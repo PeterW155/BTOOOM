@@ -8,6 +8,7 @@ public class Card : MonoBehaviour
     public int health;
     public int attack;
     public BoardPos boardPos;
+    public int id;
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +40,9 @@ public class Card : MonoBehaviour
         return false;
     }
 
+    public void KillIt()
+    {
+        Destroy(this.gameObject);
+    }
 
 }

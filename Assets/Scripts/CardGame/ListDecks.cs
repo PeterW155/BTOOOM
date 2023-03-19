@@ -11,6 +11,9 @@ public class ListDecks : MonoBehaviour
     public TMP_Dropdown dropdown;
     public List<TMP_Dropdown.OptionData> someList;
     public SetPlayerDeck setPlayerDeck;
+    public DeckHoldTest please;
+
+    public bool demoState;
 
 
     private ExitGames.Client.Photon.Hashtable _myCustomProperties = new ExitGames.Client.Photon.Hashtable();
@@ -18,7 +21,7 @@ public class ListDecks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        demoState = false;
     }
 
     // Update is called once per frame
@@ -46,11 +49,32 @@ public class ListDecks : MonoBehaviour
 
     public void OnChange_SetPlayerDeck()
     {
-        int place = dropdown.value;
-        Debug.Log(place);
-        string[] playerDeck = setPlayerDeck.GetDeck(place);
-        _myCustomProperties["PlayerDeck"] = playerDeck;
-        //PhotonNetwork.LocalPlayer.CustomProperties = _myCustomProperties;
-        PhotonNetwork.SetPlayerCustomProperties(_myCustomProperties);
+        if (demoState)
+        {
+            int place = dropdown.value;
+            Debug.Log(place);
+            string[] playerDeck = setPlayerDeck.GetDeck(place);
+            _myCustomProperties["PlayerDeck"] = playerDeck;
+            //PhotonNetwork.LocalPlayer.CustomProperties = _myCustomProperties;
+            PhotonNetwork.SetPlayerCustomProperties(_myCustomProperties);
+            please.HoldDeck(playerDeck);
+        }
+        else
+        {
+            Debug.Log("Demo Decks set");
+            int place = dropdown.value;
+            Debug.Log("Chose deck" + place);
+            string[] playerDeck = setPlayerDeck.GetDemoDeck(place);
+            _myCustomProperties["PlayerDeck"] = playerDeck;
+            //PhotonNetwork.LocalPlayer.CustomProperties = _myCustomProperties;
+            PhotonNetwork.SetPlayerCustomProperties(_myCustomProperties);
+            please.HoldDeck(playerDeck);
+        }
+        
+    }
+
+    public void SetDemoState(bool setState)
+    {
+        demoState = setState;
     }
 }
