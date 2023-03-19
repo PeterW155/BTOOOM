@@ -133,7 +133,7 @@ public class BoardPos : MonoBehaviour
         }
 
         card = Instantiate(hold, this.transform.position, Quaternion.identity);
-        //card.transform.parent = this.transform;
+        card.transform.parent = this.transform;
         currCard = card.GetComponent<Card>();
 
         hasCard = true;
