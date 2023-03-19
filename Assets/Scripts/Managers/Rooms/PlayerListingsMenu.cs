@@ -134,6 +134,26 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
             
     }
 
+    public void OnClick_StartGameShooter()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            /*for (int i = 0; i < _listings.Count; i++)
+            {
+                if (_listings[i].Player != PhotonNetwork.LocalPlayer)
+                {
+                    if (!_listings[i].Ready)
+                        return;
+                }
+            }*/
+
+            PhotonNetwork.CurrentRoom.IsOpen = false;
+            PhotonNetwork.CurrentRoom.IsVisible = false;
+            PhotonNetwork.LoadLevel(1);
+        }
+
+    }
+
     /*public void OnClick_ReadyUp()
     {
         if (!PhotonNetwork.IsMasterClient)

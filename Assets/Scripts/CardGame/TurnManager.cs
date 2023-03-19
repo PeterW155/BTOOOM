@@ -30,14 +30,22 @@ public class TurnManager : MonoBehaviour, IPunObservable
         return turn;
     }
 
+    
     public void NextTurn()
+    {
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("AllRooms", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void AllRooms()
     {
         Debug.Log("The next turn function has happened");
         if (turn == 1)
         {
             turn = 2;
         }
-        else if(turn == 2)
+        else if (turn == 2)
         {
             turn = 1;
         }
