@@ -42,7 +42,7 @@ public class Card : MonoBehaviour
 
     public void KillIt()
     {
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 
 }

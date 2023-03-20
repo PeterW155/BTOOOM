@@ -6,6 +6,7 @@ public class HandPos : MonoBehaviour
 {
 
     public GameObject card;
+    public GameObject cardShown;
     public PlayerDeck playerDeck;
     public PlayerManager playerManager;
 
@@ -34,13 +35,14 @@ public class HandPos : MonoBehaviour
     public void SetHand()
     {
         card = playerDeck.DrawCard();
-        Instantiate(card, this.transform);
+        cardShown = Instantiate(card, this.transform);
     }
 
     public void CardPlayed()
     {
         //card.GetComponent<Card>().KillIt();
+        Destroy(cardShown);
         card = playerDeck.DrawCard();
-        Instantiate(card, this.transform);
+        cardShown = Instantiate(card, this.transform);
     }
 }

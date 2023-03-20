@@ -414,6 +414,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 2101013749}
   down: {fileID: 0}
   left: {fileID: 388653773}
@@ -592,6 +593,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 676857539}
   down: {fileID: 0}
   left: {fileID: 1517656793}
@@ -836,6 +838,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 1868577182}
   down: {fileID: 388653773}
   left: {fileID: 753548482}
@@ -1245,6 +1248,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 1816769788}
   down: {fileID: 1517656793}
   left: {fileID: 0}
@@ -1777,6 +1781,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8339181639456782473, guid: 0233ec9f9183fa143861b8dec6b028fd, type: 3}
   m_PrefabInstance: {fileID: 1416720582}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1416720584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8917424910420641480, guid: 0233ec9f9183fa143861b8dec6b028fd, type: 3}
+  m_PrefabInstance: {fileID: 1416720582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416720583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53618b214d753254c94d7a8f56f4dd3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1517656788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,6 +1944,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 753548482}
   down: {fileID: 0}
   left: {fileID: 0}
@@ -2228,6 +2244,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 0}
   down: {fileID: 753548482}
   left: {fileID: 0}
@@ -2554,6 +2571,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 0}
   down: {fileID: 676857539}
   left: {fileID: 1816769788}
@@ -3216,6 +3234,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 0}
   down: {fileID: 2101013749}
   left: {fileID: 1868577182}
@@ -3394,6 +3413,7 @@ MonoBehaviour:
   playerControl: 0
   playerManager: {fileID: 857593801}
   allCards: {fileID: 2031583162}
+  turnManager: {fileID: 1416720584}
   up: {fileID: 2096069874}
   down: {fileID: 265784096}
   left: {fileID: 676857539}

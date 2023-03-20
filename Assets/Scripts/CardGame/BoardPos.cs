@@ -12,6 +12,7 @@ public class BoardPos : MonoBehaviour
     public int playerControl;
     public PlayerManager playerManager;
     public AllCards allCards;
+    public TurnManager turnManager;
 
     public BoardPos up;
     public BoardPos down;
@@ -95,7 +96,7 @@ public class BoardPos : MonoBehaviour
             int playerHold;
             int place = playerManager.activeHand.GetComponentInChildren<Card>().id;
             Debug.Log("The card id is " + place);
-            if (playerManager.playerNumber == 1)
+            if (turnManager.turn == 1)
             {
                 playerHold = 1;
             }
@@ -133,7 +134,8 @@ public class BoardPos : MonoBehaviour
         }
 
         card = Instantiate(hold, this.transform.position, Quaternion.identity);
-        card.transform.parent = this.transform;
+        card.transform.SetParent(this.transform);
+        //card.transform.parent = this.transform;
         currCard = card.GetComponent<Card>();
 
         hasCard = true;
