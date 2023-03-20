@@ -102,7 +102,7 @@ public class BoardPos : MonoBehaviour
             int playerHold;
             int place = playerManager.activeHand.GetComponentInChildren<Card>().id;
             Debug.Log("The card id is " + place);
-            if (turnManager.card == 1)
+            /*if (turnManager.card == 1)
             {
                 playerHold = 1;
                 turnManager.card = 2;
@@ -111,7 +111,8 @@ public class BoardPos : MonoBehaviour
             {
                 playerHold = 2;
                 turnManager.card = 1;
-            }
+            }*/
+            playerHold = playerManager.playerNumber;
 
             //card = MainManager.NetworkInstantiate(hold, this.transform.position, Quaternion.identity);
             //card = Instantiate(hold, this.transform.position, Quaternion.identity);
