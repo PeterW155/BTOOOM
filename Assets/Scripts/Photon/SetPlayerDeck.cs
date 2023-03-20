@@ -21,19 +21,29 @@ public class SetPlayerDeck : MonoBehaviour
         
     }
 
-    public void GetDecks(string[] deckID, string[] deckName, string[][] cards)
+    public void GetDecks(string[][] cards)
     {
-        for (int i = 0; i < deckID.Length; i++)
+        Debug.Log("GET DECKS WAS RAN");
+        for (int i = 0; i < cards.Length; i++)
         {
-            deckNames.Add(deckName[i]);
             decks.Add(cards[i]);
         }
         
         Debug.Log("Unity has the decks");
-        Debug.Log(deckNames);
 
         
         listDecks.SetDeckIds(deckNames);
+    }
+
+    public void GetDeckNames(string[] deckName)
+    {
+        Debug.Log("GET DECK NAMES WAS RAN");
+        for (int i = 0; i < deckName.Length; i++)
+        {
+            deckNames.Add(deckName[i]);
+        }
+
+        Debug.Log(deckNames);
     }
 
     public void DemoDecks(List<string> idsDemo)

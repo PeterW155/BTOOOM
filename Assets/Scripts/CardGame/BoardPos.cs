@@ -13,6 +13,7 @@ public class BoardPos : MonoBehaviour
     public PlayerManager playerManager;
     public AllCards allCards;
     public TurnManager turnManager;
+    public BoardOverall boardOverall;
 
     public BoardPos up;
     public BoardPos down;
@@ -36,8 +37,12 @@ public class BoardPos : MonoBehaviour
     {
         if (currCard.Hit(damage))
         {
+            Debug.Log("A card has DIED");
             hasCard = false;
             Destroy(card.gameObject);
+            currCard = null;
+            boardOverall.PlayerLosePoint(playerControl);
+            playerControl = 0;
         }
     }
 
@@ -86,6 +91,7 @@ public class BoardPos : MonoBehaviour
     public void OnClick_ThisBoardPos()
     {
         Debug.Log("You clicked one of the board positions");
+        Debug.Log("This position belongs to " + playerControl);
         //int place = playerManager.activeHand.GetComponentInChildren<Card>().id;
         //Debug.Log("The card id is " + place);
 
@@ -96,13 +102,15 @@ public class BoardPos : MonoBehaviour
             int playerHold;
             int place = playerManager.activeHand.GetComponentInChildren<Card>().id;
             Debug.Log("The card id is " + place);
-            if (turnManager.turn == 1)
+            if (turnManager.card == 1)
             {
                 playerHold = 1;
+                turnManager.card = 2;
             }
             else
             {
                 playerHold = 2;
+                turnManager.card = 1;
             }
 
             //card = MainManager.NetworkInstantiate(hold, this.transform.position, Quaternion.identity);
@@ -124,7 +132,7 @@ public class BoardPos : MonoBehaviour
     public void SpawnCard(int id, int player)
     {
         GameObject hold;
-        if (playerManager.playerNumber == 1)
+        if (player == 1)
         {
             hold = allCards.GetCard1(id);
         }
@@ -137,8 +145,10 @@ public class BoardPos : MonoBehaviour
         card.transform.SetParent(this.transform);
         //card.transform.parent = this.transform;
         currCard = card.GetComponent<Card>();
+        PlayCard(currCard.attack);
 
         hasCard = true;
         playerControl = playerManager.playerNumber;
+        boardOverall.PlayerGainPoint(playerControl);
     }
 }

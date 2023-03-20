@@ -7,6 +7,7 @@ public class TurnManager : MonoBehaviour, IPunObservable
 {
 
     public int turn;
+    public int card;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -15,6 +16,7 @@ public class TurnManager : MonoBehaviour, IPunObservable
     // Start is called before the first frame update
     void Start()
     {
+        card = 1;
         turn = 1;
         Debug.Log("The turn manager is ALIVE");
     }
