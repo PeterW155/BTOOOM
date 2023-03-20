@@ -149,7 +149,7 @@ public class BoardPos : MonoBehaviour
         PlayCard(currCard.attack);
 
         hasCard = true;
-        playerControl = playerManager.playerNumber;
+        playerControl = player;
         boardOverall.PlayerGainPoint(playerControl);
     }
 }
